@@ -15,12 +15,13 @@ This document serves as the central guide for all developers working on ULBS pro
 3. [Version Control & Collaboration](#version-control--collaboration)
 4. [Testing Requirements](#testing-requirements)
 5. [Deployment & Environments](#deployment--environments)
-6. [Development Environment Setup](#development-environment-setup)
-7. [Design Guidelines](#design-guidelines)
-8. [Organization Structure](#organization-structure)
-9. [Issue-Driven Development](#issue-driven-development)
-10. [Getting Started Checklist](#getting-started-checklist)
-11. [Discord - Official Communication](#discord---official-communication)
+6. [Security & Secret Management](#security--secret-management)
+7. [Development Environment Setup](#development-environment-setup)
+8. [Design Guidelines](#design-guidelines)
+9. [Organization Structure](#organization-structure)
+10. [Issue-Driven Development](#issue-driven-development)
+11. [Getting Started Checklist](#getting-started-checklist)
+12. [Discord - Official Communication](#discord---official-communication)
 
 ---
 
@@ -413,7 +414,27 @@ jobs:
 
 ---
 
-## 💻 Development Environment Setup
+## �️ Security & Secret Management
+
+### 🤖 Dependabot
+Dependabot **MUST** be activated for all repositories to ensure dependencies are kept up-to-date and secure.
+- Enable **Dependabot security updates** and **Dependabot version updates** from the repository settings, section `Advanced Security`.
+
+### 🤫 Secret Management
+**NEVER** version secrets (API keys, passwords, database credentials) in the codebase.
+- Use `.env.example` to document required environment variables.
+- Add `.env` to `.gitignore`.
+- Use **GitHub Repository Secrets** for CI/CD pipelines (e.g., deployment keys, production API tokens).
+
+#### How to use Repository Secrets:
+1. Go to your repository on GitHub.
+2. Navigate to **Settings** > **Secrets and variables** > **Actions**.
+3. Click **New repository secret**.
+4. In your GitHub Actions workflow, access the secret using `${{ secrets.YOUR_SECRET_NAME }}`.
+
+---
+
+## �💻 Development Environment Setup
 
 ### IDE Configuration
 
@@ -552,10 +573,6 @@ npm run test:e2e     # E2E tests
 npm run test:coverage # Coverage report
 ```
 
-### Debugging
-
-See [DEBUGGING.md](./DEBUGGING.md) for IDE-specific debugging setup.
-```
 </details>
 
 ---
@@ -786,6 +803,11 @@ Use this checklist when setting up a new Code4ULBS project:
 - [ ] Create README.md with project-specific information
 - [ ] Add LICENSE file
 - [ ] Set up branch protection rules for `main` branch
+
+#### Security
+- [ ] Activate Dependabot (version and security updates)
+- [ ] Ensure no secrets are versioned (use `.gitignore`)
+- [ ] Configure required Repository Secrets
 
 #### Code Quality
 - [ ] Configure linter (ESLint, Pylint, Checkstyle, etc.)

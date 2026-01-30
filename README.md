@@ -414,7 +414,7 @@ jobs:
 
 ---
 
-## �️ Security & Secret Management
+## 🔒 Security & Secret Management
 
 ### 🤖 Dependabot
 Dependabot **MUST** be activated for all repositories to ensure dependencies are kept up-to-date and secure.

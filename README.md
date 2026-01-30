@@ -37,7 +37,7 @@ Every Code4ULBS project **MUST** implement and maintain the following:
 - **End-to-End Testing** - Automated E2E tests (e.g., Playwright) running at least once daily
 - **Unit Testing** - High coverage (minimum 80%) with pre-commit hooks
 - **Environment Separation** - Production, Staging/Development environments
-- **IDE Setup Documentation** - Instructions for VS Code, IntelliJ IDEA, and other major IDEs
+- **IDE Setup Documentation** - Instructions for VS Code, IntelliJ IDEA, and other IDEs
 - **Design System Compliance** - Follow ULBS Visual Guidelines
 
 ---
@@ -200,8 +200,8 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npx playwright test
@@ -274,7 +274,7 @@ CMD ["node", "dist/index.js"]
 #### Docker Compose / Podman Compose:
 
 ```yaml
-version: '3.8'
+# docker-compose.yml or compose.yaml
 services:
   app:
     build: .
@@ -287,8 +287,8 @@ services:
   db:
     image: postgres:15
     environment:
-      POSTGRES_DB: mydb
-      POSTGRES_PASSWORD: secret
+      - POSTGRES_DB=mydb
+      - POSTGRES_PASSWORD=secret
 ```
 
 **Commands:**
@@ -321,14 +321,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: npm ci
       - run: npm run lint
       
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: npm ci
       - run: npm test
       - run: npm run test:coverage
@@ -337,7 +337,7 @@ jobs:
     needs: [lint, test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: npm ci
       - run: npm run build
       
@@ -420,10 +420,11 @@ Provide instructions for:
 
 #### Other IDEs
 
-Document setup for:
-- **Antigravity** or other specialized IDEs
+Document setup for other commonly used IDEs as needed:
+- Eclipse
 - Vim/Neovim configuration
-- Emacs setup (if applicable)
+- Emacs setup
+- Other specialized IDEs used by the team
 
 ### Getting Started Locally
 
@@ -712,7 +713,7 @@ Use this checklist when setting up a new Code4ULBS project:
 
 #### Containerization
 - [ ] Create `Dockerfile`
-- [ ] Create `docker-compose.yml` (or `compose.yaml`)
+- [ ] Create `docker-compose.yml` or `compose.yaml`
 - [ ] Test with Docker
 - [ ] Test with Podman
 - [ ] Document container setup

@@ -10,18 +10,18 @@ This document serves as the central guide for all developers working on ULBS pro
 
 ## 📋 Table of Contents
 
-1. [Mandatory Project Requirements](#mandatory-project-requirements)
-2. [Code Quality & Analysis](#code-quality--analysis)
-3. [Version Control & Collaboration](#version-control--collaboration)
-4. [Testing Requirements](#testing-requirements)
-5. [Deployment & Environments](#deployment--environments)
-6. [Security & Secret Management](#security--secret-management)
-7. [Development Environment Setup](#development-environment-setup)
-8. [Design Guidelines](#design-guidelines)
-9. [Organization Structure](#organization-structure)
-10. [Issue-Driven Development](#issue-driven-development)
-11. [Getting Started Checklist](#getting-started-checklist)
-12. [Discord - Official Communication](#discord---official-communication)
+1. [Mandatory Project Requirements](#-mandatory-project-requirements)
+2. [Code Quality & Analysis](#-code-quality--analysis)
+3. [Version Control & Collaboration](#-version-control--collaboration)
+4. [Testing Requirements](#-testing-requirements)
+5. [Deployment & Environments](#-deployment--environments)
+6. [Security & Secret Management](#-security--secret-management)
+7. [Development Environment Setup](#-development-environment-setup)
+8. [Design Guidelines](#-design-guidelines)
+9. [Organization Structure](#-organization-structure)
+10. [Issue-Driven Development](#-issue-driven-development)
+11. [Getting Started Checklist](#-getting-started-checklist)
+12. [Discord - Official Communication](#-discord---official-communication)
 
 ---
 
@@ -40,7 +40,7 @@ Every Code4ULBS project **MUST** implement and maintain the following:
 - **Unit Testing** - High coverage (minimum 80%) with pre-commit hooks
 - **Environment Separation** - Production, Staging/Development environments
 - **IDE Setup Documentation** - Instructions for VS Code, IntelliJ IDEA, and other IDEs
-- **Design System Compliance** - Follow [ULBS Visual Guidelines](#design-guidelines)
+- **Design System Compliance** - Follow [ULBS Visual Guidelines](#-design-guidelines)
 
 ---
 
@@ -434,7 +434,7 @@ Dependabot **MUST** be activated for all repositories to ensure dependencies are
 
 ---
 
-## �💻 Development Environment Setup
+## 💻 Development Environment Setup
 
 ### IDE Configuration
 

@@ -1,4 +1,4 @@
-# Code4ULBS
+![Logo](assets/code4ulbs-logo.png)
 
 General information about the Code4ULBS initiative - Project Requirements and Guidelines
 
@@ -10,16 +10,17 @@ This document serves as the central guide for all developers working on ULBS pro
 
 ## 📋 Table of Contents
 
-1. [Mandatory Project Requirements](#-mandatory-project-requirements)
-2. [Code Quality & Analysis](#-code-quality--analysis)
-3. [Version Control & Collaboration](#-version-control--collaboration)
-4. [Testing Requirements](#-testing-requirements)
-5. [Deployment & Environments](#-deployment--environments)
-6. [Development Environment Setup](#-development-environment-setup)
-7. [Design Guidelines](#-design-guidelines)
-8. [Organization Structure](#-organization-structure)
-9. [Issue-Driven Development](#-issue-driven-development)
-10. [Getting Started Checklist](#-getting-started-checklist)
+1. [Mandatory Project Requirements](#mandatory-project-requirements)
+2. [Code Quality & Analysis](#code-quality--analysis)
+3. [Version Control & Collaboration](#version-control--collaboration)
+4. [Testing Requirements](#testing-requirements)
+5. [Deployment & Environments](#deployment--environments)
+6. [Development Environment Setup](#development-environment-setup)
+7. [Design Guidelines](#design-guidelines)
+8. [Organization Structure](#organization-structure)
+9. [Issue-Driven Development](#issue-driven-development)
+10. [Getting Started Checklist](#getting-started-checklist)
+11. [Discord - Official Communication](#discord---official-communication)
 
 ---
 
@@ -38,7 +39,7 @@ Every Code4ULBS project **MUST** implement and maintain the following:
 - **Unit Testing** - High coverage (minimum 80%) with pre-commit hooks
 - **Environment Separation** - Production, Staging/Development environments
 - **IDE Setup Documentation** - Instructions for VS Code, IntelliJ IDEA, and other IDEs
-- **Design System Compliance** - Follow ULBS Visual Guidelines
+- **Design System Compliance** - Follow [ULBS Visual Guidelines](#design-guidelines)
 
 ---
 
@@ -47,6 +48,9 @@ Every Code4ULBS project **MUST** implement and maintain the following:
 ### Linting Configuration
 
 Each project must have:
+
+<details>
+<summary>Example Linting Commands</summary>
 
 ```bash
 # Example for different tech stacks:
@@ -62,6 +66,7 @@ mvn checkstyle:check
 # Go: golangci-lint
 golangci-lint run
 ```
+</details>
 
 ### Requirements:
 
@@ -119,6 +124,10 @@ Every project must include a `copilot-instructions.md` (or `.github/copilot-inst
 - Security considerations
 
 **Example structure:**
+
+<details>
+<summary>View Example copilot-instructions.md</summary>
+
 ```markdown
 # Project Copilot Instructions
 
@@ -138,6 +147,7 @@ Every project must include a `copilot-instructions.md` (or `.github/copilot-inst
 ## Common Patterns
 [List patterns used in the project]
 ```
+</details>
 
 ---
 
@@ -153,6 +163,10 @@ Every project must include a `copilot-instructions.md` (or `.github/copilot-inst
 - ✅ Clear test naming conventions
 
 **Example:**
+
+<details>
+<summary>Example Unit Test Commands</summary>
+
 ```bash
 # Run unit tests
 npm test           # Node.js
@@ -160,13 +174,19 @@ pytest             # Python
 mvn test           # Java
 go test ./...      # Go
 ```
+</details>
 
 **Coverage reporting:**
+
+<details>
+<summary>Example Coverage Commands</summary>
+
 ```bash
 # Generate coverage report
 npm run test:coverage
 # Coverage reports should be available in CI/CD pipeline
 ```
+</details>
 
 ### End-to-End (E2E) Testing
 
@@ -177,6 +197,10 @@ npm run test:coverage
 - ✅ Tests run against staging environment before production deployment
 
 **Example Playwright setup:**
+
+<details>
+<summary>Example Playwright Setup</summary>
+
 ```bash
 # Install Playwright
 npm install -D @playwright/test
@@ -187,8 +211,13 @@ npx playwright test
 # Run with UI
 npx playwright test --ui
 ```
+</details>
 
 **GitHub Actions E2E workflow:**
+
+<details>
+<summary>Example E2E Workflow</summary>
+
 ```yaml
 name: E2E Tests
 on:
@@ -206,6 +235,7 @@ jobs:
       - run: npx playwright install --with-deps
       - run: npx playwright test
 ```
+</details>
 
 ### Testing Best Practices
 
@@ -237,6 +267,10 @@ Every project **MUST** have at least two environments:
 - High availability and monitoring
 
 **Environment Configuration:**
+
+<details>
+<summary>Example .env files</summary>
+
 ```bash
 # Use environment variables for configuration
 # .env.development
@@ -247,12 +281,16 @@ API_URL=https://api-staging.ulbs.ro
 DATABASE_URL=postgresql://prod-db:5432/prod_db
 API_URL=https://api.ulbs.ro
 ```
+</details>
 
 ### Containerization
 
 All projects must support **both Docker and Podman**:
 
 #### Dockerfile Requirements:
+
+<details>
+<summary>Example Dockerfile</summary>
 
 ```dockerfile
 # Multi-stage build for optimization
@@ -270,8 +308,12 @@ COPY --from=builder /app/node_modules ./node_modules
 EXPOSE 3000
 CMD ["node", "dist/index.js"]
 ```
+</details>
 
 #### Docker Compose / Podman Compose:
+
+<details>
+<summary>Example Docker Compose</summary>
 
 ```yaml
 # docker-compose.yml or compose.yaml
@@ -290,8 +332,13 @@ services:
       - POSTGRES_DB=mydb
       - POSTGRES_PASSWORD=secret
 ```
+</details>
 
 **Commands:**
+
+<details>
+<summary>Example Container Commands</summary>
+
 ```bash
 # Docker
 docker build -t myapp .
@@ -301,12 +348,16 @@ docker-compose up
 podman build -t myapp .
 podman-compose up
 ```
+</details>
 
 ### GitHub Actions CI/CD
 
 Every project must have automated deployment workflows:
 
 #### Example workflow structure:
+
+<details>
+<summary>Example CI/CD Workflow</summary>
 
 ```yaml
 name: CI/CD Pipeline
@@ -358,6 +409,7 @@ jobs:
       - name: Deploy to production
         run: echo "Deploy to production"
 ```
+</details>
 
 ---
 
@@ -372,6 +424,10 @@ Each project must provide setup instructions for major IDEs:
 Create `.vscode/` folder with:
 
 **`settings.json`** - Editor settings
+
+<details>
+<summary>Example settings.json</summary>
+
 ```json
 {
   "editor.formatOnSave": true,
@@ -381,8 +437,13 @@ Create `.vscode/` folder with:
   }
 }
 ```
+</details>
 
 **`launch.json`** - Debug configurations
+
+<details>
+<summary>Example launch.json</summary>
+
 ```json
 {
   "version": "0.2.0",
@@ -398,8 +459,13 @@ Create `.vscode/` folder with:
   ]
 }
 ```
+</details>
 
 **`extensions.json`** - Recommended extensions
+
+<details>
+<summary>Example extensions.json</summary>
+
 ```json
 {
   "recommendations": [
@@ -409,6 +475,7 @@ Create `.vscode/` folder with:
   ]
 }
 ```
+</details>
 
 #### IntelliJ IDEA / WebStorm
 
@@ -429,6 +496,9 @@ Document setup for other commonly used IDEs as needed:
 ### Getting Started Locally
 
 Every README should include:
+
+<details>
+<summary>Example Local Setup Guide</summary>
 
 ```markdown
 ## Local Development Setup
@@ -486,6 +556,7 @@ npm run test:coverage # Coverage report
 
 See [DEBUGGING.md](./DEBUGGING.md) for IDE-specific debugging setup.
 ```
+</details>
 
 ---
 
@@ -516,6 +587,9 @@ All ULBS projects must follow the **ULBS Design System** for consistent look and
 
 Projects should use design tokens for consistency:
 
+<details>
+<summary>Example Design Tokens (CSS Variables)</summary>
+
 ```css
 /* Example CSS Variables */
 :root {
@@ -526,6 +600,7 @@ Projects should use design tokens for consistency:
   --border-radius: 4px;
 }
 ```
+</details>
 
 ---
 
@@ -601,6 +676,10 @@ All issues must move through these states:
 Each repository should have issue templates:
 
 **Bug Report Template:**
+
+<details>
+<summary>View Bug Report Template</summary>
+
 ```markdown
 ## Bug Description
 [Clear description of the bug]
@@ -624,8 +703,13 @@ Each repository should have issue templates:
 - Browser: 
 - Version:
 ```
+</details>
 
 **Feature Request Template:**
+
+<details>
+<summary>View Feature Request Template</summary>
+
 ```markdown
 ## Feature Description
 [Clear description of the feature]
@@ -643,6 +727,7 @@ Each repository should have issue templates:
 ## Additional Context
 [Any other context or screenshots]
 ```
+</details>
 
 ### Pull Request Requirements
 
@@ -656,6 +741,10 @@ Every PR must:
 ✅ **Be up to date** with the target branch
 
 **Example PR description:**
+
+<details>
+<summary>View Example PR Description</summary>
+
 ```markdown
 ## Changes
 - Implemented user authentication
@@ -681,6 +770,7 @@ Fixes #123
 - [x] No new warnings generated
 - [x] Tests pass locally
 ```
+</details>
 
 ---
 
@@ -761,6 +851,7 @@ Use this checklist when setting up a new Code4ULBS project:
 Welcome! Here's what you need to do:
 
 #### Access Setup
+- [ ] Join the [Code4ULBS Discord server](https://discord.gg/XjCcUdnh)
 - [ ] Get added to appropriate GitHub Team
 - [ ] Get access to GitHub Project board
 - [ ] Get access to development environment
@@ -792,14 +883,15 @@ Welcome! Here's what you need to do:
 - [ ] Submit PR with issue link
 - [ ] Address code review feedback
 
----
+## 💬 Discord - Official Communication
 
-## 📚 Additional Resources
+All project-related discussions and communication occur on our official Discord server. 
 
-- **ULBS Design System**: [Figma Visual Guidelines](https://www.figma.com/design/6l4FWSiHc1u4oCUwRS3Q2s/ULBS-Visual-guidelines)
-- **GitHub Organizations Best Practices**: [GitHub Docs](https://docs.github.com/en/organizations)
-- **Conventional Commits**: [conventionalcommits.org](https://www.conventionalcommits.org/)
-- **Semantic Versioning**: [semver.org](https://semver.org/)
+✅ **Link**: [Join Code4ULBS Discord](https://discord.gg/XjCcUdnh)
+
+### Requirements:
+- **Mandatory Join**: All contributors **MUST** join the server to participate in the project.
+- **Communication Hub**: All technical discussions, announcements, and team coordination are conducted exclusively via Discord.
 
 ---
 
@@ -812,9 +904,9 @@ All contributions must follow the guidelines outlined in this document. If you h
 ## 📞 Support
 
 For questions or assistance:
-- Open an issue in the relevant repository
-- Contact your team lead
-- Reach out in project communication channels
+- **Discord**: Reach out in the `#support` or project-specific channels on our [Discord server](https://discord.gg/XjCcUdnh)
+- **Issues**: Open an issue in the relevant repository
+- **Team Lead**: Contact your team lead via Discord
 
 ---
 

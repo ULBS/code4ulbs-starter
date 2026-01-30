@@ -798,7 +798,7 @@ Fixes #123
 Use this checklist when setting up a new Code4ULBS project:
 
 #### Repository Setup
-- [ ] Create repository in ULBS organization
+- [ ] Create repository in ULBS organization (use [code4ulbs-starter](https://github.com/ULBS/code4ulbs-starter) as template)
 - [ ] Add appropriate `.gitignore` file
 - [ ] Create README.md with project-specific information
 - [ ] Add LICENSE file

@@ -15,13 +15,14 @@ This document serves as the central guide for all developers working on ULBS pro
 3. [Version Control & Collaboration](#-version-control--collaboration)
 4. [Testing Requirements](#-testing-requirements)
 5. [Deployment & Environments](#-deployment--environments)
-6. [Security & Secret Management](#-security--secret-management)
-7. [Development Environment Setup](#-development-environment-setup)
-8. [Design Guidelines](#-design-guidelines)
-9. [Organization Structure](#-organization-structure)
-10. [Issue-Driven Development](#-issue-driven-development)
-11. [Getting Started Checklist](#-getting-started-checklist)
-12. [Discord - Official Communication](#-discord---official-communication)
+6. [Database Management](#-database-management)
+7. [Security & Authentication](#-security--authentication)
+8. [Development Environment Setup](#-development-environment-setup)
+9. [Design Guidelines](#-design-guidelines)
+10. [Organization Structure](#-organization-structure)
+11. [Issue-Driven Development](#-issue-driven-development)
+12. [Getting Started Checklist](#-getting-started-checklist)
+13. [Discord - Official Communication](#-discord---official-communication)
 
 ---
 
@@ -41,6 +42,8 @@ Every Code4ULBS project **MUST** implement and maintain the following:
 - **Environment Separation** - Production, Staging/Development environments
 - **IDE Setup Documentation** - Instructions for VS Code, IntelliJ IDEA, and other IDEs
 - **Design System Compliance** - Follow [ULBS Visual Guidelines](#-design-guidelines)
+- **Google Authentication** - Mandatory Google Auth, no local passwords
+- **Database Auditing** - Built-in auditing and backup systems
 
 ---
 
@@ -116,9 +119,13 @@ The `main` branch **MUST** be protected with the following rules:
 9. **Address feedback** from code review
 10. **Merge** only after approval and passing CI/CD checks
 
-### AI Coding Assistant Instructions
+### AI Coding Assistant & GitHub Copilot
 
-The project includes a `copilot-instructions.md` (or `.github/copilot-instructions.md`) file that contains project-specific coding conventions and architecture patterns.
+Code4ULBS projects leverage AI to accelerate development while maintaining high standards.
+
+✅ **GitHub Copilot Pro:** All ULBS students have **FREE access** to GitHub Copilot Pro through the GitHub Student Developer Pack. It is highly recommended to use it.
+✅ **AI Instructions:** Every project **MUST** maintain a `copilot-instructions.md` (or `.github/copilot-instructions.md`) file. This file provides critical context to AI agents about project-specific conventions, architecture, and libraries.
+✅ **Continuous Maintenance:** Update the instructions file whenever significant architectural changes or new patterns are introduced.
 
 <details>
 <summary>View Example copilot-instructions.md</summary>
@@ -299,7 +306,7 @@ The template supports **both Docker and Podman**. The base `Dockerfile` and `com
 #### Dockerfile Requirements:
 
 <details>
-<summary>Example Dockerfile (included in template)</summary>
+<summary>Example Dockerfile</summary>
 
 ```dockerfile
 # Multi-stage build for optimization
@@ -432,7 +439,38 @@ jobs:
 
 ---
 
-## 🔒 Security & Secret Management
+## � Database Management
+
+Proper data management, backup strategies, and auditing are essential for all ULBS projects.
+
+### 🛡️ Backups & Reliability
+- ✅ **Automated Backups:** All databases must have a scheduled backup system (e.g., daily exports to secure storage).
+- ✅ **Point-in-Time Recovery:** For critical applications, enable log-based recovery if supported by the provider.
+
+### 🕵️ Audit Trails
+All projects **SHOULD** implement automated auditing to track who changed what and when. This should ideally be handled at the framework or database level, not manually in business logic.
+
+**Recommended Frameworks for Auditing:**
+
+| Technology Stack | Recommended Auditing Tool |
+| :--- | :--- |
+| **Java / Spring Boot** | [Hibernate Envers](https://hibernate.org/orm/envers/) |
+| **Node.js (TypeORM)** | [typeorm-extension](https://github.com/braid-group/typeorm-extension) or Custom Subscribers |
+| **Python (Django)** | [django-simple-history](https://django-simple-history.readthedocs.io/) |
+| **Python (SQLAlchemy)** | [SQLAlchemy-Continuum](https://sqlalchemy-continuum.readthedocs.io/) |
+| **Go** | Custom middleware or DB-level triggers (e.g., GORM hooks) |
+
+---
+
+## 🔒 Security & Authentication
+
+### 🔑 Authentication Requirements
+
+ULBS follows a centralized authentication strategy to ensure security and simplify user management.
+
+- ✅ **Google Authentication Only:** All applications **MUST** use Google Auth (ULBS Workspace accounts) for user authentication.
+- ❌ **No Local Passwords:** Applications are **forbidden** from storing or managing user passwords at the application level.
+- ✅ **OAuth2 / OpenID Connect:** Implement authentication using standard protocols (OIDC is preferred).
 
 ### 🤖 Dependabot
 

@@ -12,24 +12,24 @@ Proiecte actuale:
 Repo-uri (ULBS organization) & detalii:
 
 - **ULBS Connect**: frontend & backend
-  - Frontend: https://github.com/ULBS/ulbs-connect-frontend — frontend pentru ULBS Connect.
-  - Backend: https://github.com/ULBS/ulbs-connect-backend — backend PHP pentru ULBS Connect (conține README și un folder `public/landing_page` cu documentație).
+  - Frontend: https://github.com/code4ulbs/ulbs-connect-frontend — frontend pentru ULBS Connect.
+  - Backend: https://github.com/code4ulbs/ulbs-connect-backend — backend PHP pentru ULBS Connect (conține README și un folder `public/landing_page` cu documentație).
   - Tehnologii: React Native (frontend) + PHP Laravel (backend)
 
-- **Schedule**: https://github.com/ULBS/schedule — găzduiește https://schedule.ulbsibiu.ro. Repo-ul include frontend si backend.
+- **Schedule**: https://github.com/code4ulbs/schedule — găzduiește https://schedule.ulbsibiu.ro. Repo-ul include frontend si backend.
   - Tehnologii: PHP Laravel (server-side) + Vue.js (frontend)
 
 - **Gradis**:
-  - Frontend: https://github.com/ULBS/gradis-frontend — frontend TypeScript pentru gradis.ulbsibiu.ro.
-  - Backend: https://github.com/ULBS/gradis-backend — backend Java pentru gradis.ulbsibiu.ro.
-  - Unelte / utilitare: https://github.com/ULBS/gradis-tools — diverse utilitare (ex: `cel-playground`, `wos-starter-client`) folosite în ecosistemul Gradis.
+  - Frontend: https://github.com/code4ulbs/gradis-frontend — frontend TypeScript pentru gradis.ulbsibiu.ro.
+  - Backend: https://github.com/code4ulbs/gradis-backend — backend Java pentru gradis.ulbsibiu.ro.
+  - Unelte / utilitare: https://github.com/code4ulbs/gradis-tools — diverse utilitare (ex: `cel-playground`, `wos-starter-client`) folosite în ecosistemul Gradis.
   - Tehnologii: Vue.js (frontend) + Java Spring Boot (backend)
 
-- **Plata cu ora**: https://github.com/ULBS/platacuora — aplicație pentru declarații "Plata cu ora" (conține `frontend/` și README-uri specifice subdirectoarelor). Există și repo-uri de echipă/variante arhivate (ex. `platacuora-timetech`, `platacuora-SalaryInjectors`).
+- **Plata cu ora**: https://github.com/code4ulbs/platacuora — aplicație pentru declarații "Plata cu ora" (conține `frontend/` și README-uri specifice subdirectoarelor). Există și repo-uri de echipă/variante arhivate (ex. `platacuora-timetech`, `platacuora-SalaryInjectors`).
   - Tehnologii: Angular (frontend) si Node.js (backend)
 
-- **Internships**: https://github.com/ULBS/internships — aplicație pentru internship-uri; repo structurat cu `backend/` și `frontend/` (ambele conțin README.md cu detalii despre componente).
+- **Internships**: https://github.com/code4ulbs/internships — aplicație pentru internship-uri; repo structurat cu `backend/` și `frontend/` (ambele conțin README.md cu detalii despre componente).
   - Tehnologii: PHP (Laravel/Blade for frontend templates) + backend PHP
 
-- **Exams**: https://github.com/ULBS/exams — repo Python pentru generare corectare examene; (README sau documentație internă limitată în vizibilitate publică).
+- **Exams**: https://github.com/code4ulbs/exams — repo Python pentru generare corectare examene; (README sau documentație internă limitată în vizibilitate publică).
   - Tehnologii: Python

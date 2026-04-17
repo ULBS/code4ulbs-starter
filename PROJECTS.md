@@ -34,6 +34,8 @@ Repo-uri (ULBS organization) & detalii:
 
 - **Internships**: https://github.com/ULBS/internships — aplicație pentru internship-uri; repo structurat cu `backend/` și `frontend/` (ambele conțin README.md cu detalii despre componente).
   - Tehnologii: PHP (Laravel/Blade for frontend templates) + backend PHP
+- **Teme de licenta**: https://github.com/code4ulbs/teme_licenta - aplicatie pentru gestiunea temelor de licenta
+   - Repo: https://github.com/code4ulbs/teme_licenta 
 
 - **Exams**: https://github.com/ULBS/exams — repo Python pentru generare corectare examene; (README sau documentație internă limitată în vizibilitate publică).
   - Tehnologii: Python

@@ -956,6 +956,12 @@ Before considering a project **complete or production-ready**, verify:
 - [ ] Main branch protected  
 - [ ] AI instructions file exists  
 
+## 🏢 Organization
+
+- [ ] Team created  
+- [ ] Repo linked to team  
+- [ ] Project board active
+
 ## 🧪 Testing
 
 - [ ] Unit tests ≥80% coverage  
@@ -972,9 +978,8 @@ Before considering a project **complete or production-ready**, verify:
 
 ## 🐳 Infrastructure
 
-- [ ] Docker works  
-- [ ] Podman works  
-- [ ] Compose file configured  
+- [ ] Docker/Podman file exists 
+- [ ] Compose file configured and working
 
 ## 🗄️ Database
 
@@ -985,27 +990,21 @@ Before considering a project **complete or production-ready**, verify:
 ## 🔒 Security
 
 - [ ] Google Auth implemented  
-- [ ] No passwords stored  
-- [ ] Secrets not committed  
-- [ ] Dependabot enabled  
+- [ ] No passwords stored in plain text (DB & source code)
+- [ ] Secrets not committed to git
+- [ ] Dependabot version updates enabled in the repository's Security settings
 
 ## 💻 Developer Experience
 
-- [ ] IDE setup documented  
-- [ ] Project runs locally  
-- [ ] Debugging works  
+- [ ] IDE setup documented 
+- [ ] Instructions on how to start project locally
+- [ ] Instructions on Debugging works (frontend and backend)
 
 ## 🎨 Design
 
 - [ ] ULBS design system respected  
 - [ ] Responsive design implemented  
 - [ ] Accessibility checked  
-
-## 🏢 Organization
-
-- [ ] Team created  
-- [ ] Repo linked to team  
-- [ ] Project board active  
 
 ## 📝 Workflow
 

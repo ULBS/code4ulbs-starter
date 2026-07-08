@@ -9,7 +9,7 @@
 | `staging-app02.ulbsibiu.ro` | `172.17.102.59:3002` | Site DEP CIE |
 | `staging-app03.ulbsibiu.ro` | `172.17.102.59:3003` | Teme Licenta |
 | `staging-app04.ulbsibiu.ro` | `172.17.102.59:3004` | Platacuora |
-| `staging-app05.ulbsibiu.ro` | `172.17.102.59:3005` | |
+| `staging-app05.ulbsibiu.ro` | `172.17.102.59:3005` | Internships |
 | `staging-app06.ulbsibiu.ro` | `172.17.102.59:3006` | |
 | `staging-app07.ulbsibiu.ro` | `172.17.102.59:3007` | |
 | `staging-app08.ulbsibiu.ro` | `172.17.102.59:3008` | |

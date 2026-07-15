@@ -10,7 +10,7 @@
 | `staging-app03.ulbsibiu.ro` | `172.17.102.59:3003` | Teme Licenta |
 | `staging-app04.ulbsibiu.ro` | `172.17.102.59:3004` | Platacuora |
 | `staging-app05.ulbsibiu.ro` | `172.17.102.59:3005` | Internships |
-| `staging-app06.ulbsibiu.ro` | `172.17.102.59:3006` | |
+| `staging-app06.ulbsibiu.ro` | `172.17.102.59:3006` | Exams |
 | `staging-app07.ulbsibiu.ro` | `172.17.102.59:3007` | |
 | `staging-app08.ulbsibiu.ro` | `172.17.102.59:3008` | |
 | `staging-app09.ulbsibiu.ro` | `172.17.102.59:3009` | |

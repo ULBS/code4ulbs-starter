@@ -11,7 +11,7 @@
 | `staging-app04.ulbsibiu.ro` | `172.17.102.59:3004` | Platacuora |
 | `staging-app05.ulbsibiu.ro` | `172.17.102.59:3005` | Internships |
 | `staging-app06.ulbsibiu.ro` | `172.17.102.59:3006` | Exams |
-| `staging-app07.ulbsibiu.ro` | `172.17.102.59:3007` | |
+| `staging-app07.ulbsibiu.ro` | `172.17.102.59:3007` | Schedule |
 | `staging-app08.ulbsibiu.ro` | `172.17.102.59:3008` | |
 | `staging-app09.ulbsibiu.ro` | `172.17.102.59:3009` | |
 | `staging-app10.ulbsibiu.ro` | `172.17.102.59:3010` | |

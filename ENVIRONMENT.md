@@ -29,6 +29,8 @@
 On staging.ulbsibiu.ro we have Coolify running. Coolify manages all other staged apps. In order for the app to be accessible, configure it to listen to the specified port (e.g. `staging-app07` should listen on port `3007`).
 Make sure you have a proper docker-compose file: don't set networks and don't export ports for backend and other services, make sure just the frontend has the corresponding port exposed. Then make sure to set the domain in Coolify for the frontend service.
 
+Note: when adding a new user to the team, he needs to first click the invitation link received via email, then he needs to use `Forgot my password` to set his own.
+
 ## System Setup
 
 ### User Management

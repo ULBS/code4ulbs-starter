@@ -4,27 +4,27 @@
 
 | Domain | IP:Port | Service / Description |
 | :--- | :--- | :--- |
-| `staging.ulbsibiu.ro` | `172.17.102.59:80` | Coolify |
-| `staging-app01.ulbsibiu.ro` | `172.17.102.59:3001` | Portainer |
-| `staging-app02.ulbsibiu.ro` | `172.17.102.59:3002` | Site DEP CIE |
-| `staging-app03.ulbsibiu.ro` | `172.17.102.59:3003` | Teme Licenta |
-| `staging-app04.ulbsibiu.ro` | `172.17.102.59:3004` | Platacuora |
-| `staging-app05.ulbsibiu.ro` | `172.17.102.59:3005` | Internships |
-| `staging-app06.ulbsibiu.ro` | `172.17.102.59:3006` | Exams |
-| `staging-app07.ulbsibiu.ro` | `172.17.102.59:3007` | Schedule |
-| `staging-app08.ulbsibiu.ro` | `172.17.102.59:3008` | |
-| `staging-app09.ulbsibiu.ro` | `172.17.102.59:3009` | |
-| `staging-app10.ulbsibiu.ro` | `172.17.102.59:3010` | |
-| `staging-app11.ulbsibiu.ro` | `172.17.102.59:3011` | |
-| `staging-app12.ulbsibiu.ro` | `172.17.102.59:3012` | |
-| `staging-app13.ulbsibiu.ro` | `172.17.102.59:3013` | |
-| `staging-app14.ulbsibiu.ro` | `172.17.102.59:3014` | |
-| `staging-app15.ulbsibiu.ro` | `172.17.102.59:3015` | |
-| `staging-app16.ulbsibiu.ro` | `172.17.102.59:3016` | |
-| `staging-app17.ulbsibiu.ro` | `172.17.102.59:3017` | |
-| `staging-app18.ulbsibiu.ro` | `172.17.102.59:3018` | |
-| `staging-app19.ulbsibiu.ro` | `172.17.102.59:3019` | |
-| `staging-app20.ulbsibiu.ro` | `172.17.102.59:3020` | ULBS Backstage |
+| [staging.ulbsibiu.ro](staging.ulbsibiu.ro) | `172.17.102.59:80` | Coolify |
+| [staging-app01.ulbsibiu.ro](staging-app01.ulbsibiu.ro) | `172.17.102.59:3001` | Portainer |
+| [staging-app02.ulbsibiu.ro](staging-app02.ulbsibiu.ro) | `172.17.102.59:3002` | Site DEP CIE |
+| [staging-app03.ulbsibiu.ro](staging-app03.ulbsibiu.ro) | `172.17.102.59:3003` | Teme Licenta |
+| [staging-app04.ulbsibiu.ro](staging-app04.ulbsibiu.ro) | `172.17.102.59:3004` | Platacuora |
+| [staging-app05.ulbsibiu.ro](staging-app05.ulbsibiu.ro) | `172.17.102.59:3005` | Internships |
+| [staging-app06.ulbsibiu.ro](staging-app06.ulbsibiu.ro) | `172.17.102.59:3006` | Exams |
+| [staging-app07.ulbsibiu.ro](staging-app07.ulbsibiu.ro) | `172.17.102.59:3007` | Schedule |
+| [staging-app08.ulbsibiu.ro](staging-app08.ulbsibiu.ro) | `172.17.102.59:3008` | |
+| [staging-app09.ulbsibiu.ro](staging-app09.ulbsibiu.ro) | `172.17.102.59:3009` | |
+| [staging-app10.ulbsibiu.ro](staging-app10.ulbsibiu.ro) | `172.17.102.59:3010` | |
+| [staging-app11.ulbsibiu.ro](staging-app11.ulbsibiu.ro) | `172.17.102.59:3011` | |
+| [staging-app12.ulbsibiu.ro](staging-app12.ulbsibiu.ro) | `172.17.102.59:3012` | |
+| [staging-app13.ulbsibiu.ro](staging-app13.ulbsibiu.ro) | `172.17.102.59:3013` | |
+| [staging-app14.ulbsibiu.ro](staging-app14.ulbsibiu.ro) | `172.17.102.59:3014` | |
+| [staging-app15.ulbsibiu.ro](staging-app15.ulbsibiu.ro) | `172.17.102.59:3015` | |
+| [staging-app16.ulbsibiu.ro](staging-app16.ulbsibiu.ro) | `172.17.102.59:3016` | |
+| [staging-app17.ulbsibiu.ro](staging-app17.ulbsibiu.ro) | `172.17.102.59:3017` | |
+| [staging-app18.ulbsibiu.ro](staging-app18.ulbsibiu.ro) | `172.17.102.59:3018` | |
+| [staging-app19.ulbsibiu.ro](staging-app19.ulbsibiu.ro) | `172.17.102.59:3019` | |
+| [staging-app20.ulbsibiu.ro](staging-app20.ulbsibiu.ro) | `172.17.102.59:3020` | ULBS Backstage |
 
 On staging.ulbsibiu.ro we have Coolify running. Coolify manages all other staged apps. In order for the app to be accessible, configure it to listen to the specified port (e.g. `staging-app07` should listen on port `3007`).
 Make sure you have a proper docker-compose file: don't set networks and don't export ports for backend and other services, make sure just the frontend has the corresponding port exposed. Then make sure to set the domain in Coolify for the frontend service.

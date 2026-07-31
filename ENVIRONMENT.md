@@ -26,41 +26,7 @@
 | [staging-app19.ulbsibiu.ro](staging-app19.ulbsibiu.ro) | `172.17.102.59:3019` | |
 | [staging-app20.ulbsibiu.ro](staging-app20.ulbsibiu.ro) | `172.17.102.59:3020` | ULBS Backstage |
 
-On staging.ulbsibiu.ro we have Coolify running. Coolify manages all other staged apps. In order for the app to be accessible, configure it to listen to the specified port (e.g. `staging-app07` should listen on port `3007`).
+On staging.ulbsibiu.ro we have [Coolify]([url](https://github.com/coollabsio/coolify)) running. Coolify manages all other staged apps. In order for the app to be accessible, configure it to listen to the specified port (e.g. `staging-app07` should listen on port `3007`).
 Make sure you have a proper docker-compose file: don't set networks and don't export ports for backend and other services, make sure just the frontend has the corresponding port exposed. Then make sure to set the domain in Coolify for the frontend service.
 
 Note: when adding a new user to the team, he needs to first click the invitation link received via email, then he needs to use `Forgot my password` to set his own.
-
-## System Setup
-
-### User Management
-```bash
-sudo adduser username
-sudo passwd username
-sudo usermod -aG wheel username
-```
-
-### SSH Key Configuration
-Run on local machine:
-```bash
-ssh-keygen -t ed25519
-```
-Then copy the content of the `.pub` file to the remote server in `~/.ssh/authorized_keys`.
-
-### Docker Installation
-```bash
-sudo dnf install -y dnf-plugins-core
-sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-sudo systemctl start docker
-sudo systemctl enable docker
-```
-
-### Docker Permissions
-Give docker rights to the `build` user:
-```bash
-sudo usermod -aG docker build
-newgrp docker
-# then restart the runner service!
-```

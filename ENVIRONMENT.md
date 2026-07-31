@@ -26,6 +26,8 @@
 | `staging-app19.ulbsibiu.ro` | `172.17.102.59:3019` | |
 | `staging-app20.ulbsibiu.ro` | `172.17.102.59:3020` | ULBS Backstage |
 
+On staging.ulbsibiu.ro we have Coolify running. Coolify manages all other staged apps. In order for the app to be accessible, configure it to listen to the specified port (e.g. `staging-app07` should listen on port `3007`)
+
 ## System Setup
 
 ### User Management
